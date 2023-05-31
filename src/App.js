@@ -1,6 +1,7 @@
-import ExpenseItem from "./Components/ExpenseItem";
+import Expenses from "./Components/Expenses/Expenses";
+ import React from "react";
 
-function App() {
+const App=()=> {
   const expenses = [
     {
       id: "ev1",
@@ -28,30 +29,9 @@ function App() {
       amount: 600,
     },
   ];
-
-  var expenseDiv = [];
-
-  for (let i = 0; i < expenses.length; i++) {
-    for (let j = 0; j < 25; j++) {
-      expenseDiv.push(expenses[i]);
-    }
-  }
-
   return (
     <div>
-      {expenseDiv
-        .map((value) => ({ value, sort: Math.random() }))
-        .sort((a, b) => a.sort - b.sort)
-        .map(({ value }) => value)
-        .map((a) => {
-          return (
-            <ExpenseItem
-              expD={a.date}
-              expT={a.title}
-              expA={a.amount}
-            ></ExpenseItem>
-          );
-        })}
+ <Expenses item={expenses} /> 
     </div>
   );
 }
