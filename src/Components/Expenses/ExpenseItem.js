@@ -1,13 +1,13 @@
 import ExpenseDate from "./ExpenseDate";
-import React from "react";
+import React ,{useState} from "react";
 
 import "./ExpenseItem.css";
 import Card from "../UI/Card";
 
 const ExpenseItem = (props) => {
-  const amount=props.amount;
+  const  [amount,setAmount]=useState(props.amount);
   const clickHandler=()=>{
-        amount=0;
+        setAmount('100');
         console.log(amount);
   }
   return (
